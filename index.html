@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background: black;
+                color: #1a1a1a;
+                font-family: sans-serif;
+            }
+            div {
+                padding: 2rem;
+            }
+            p {
+                padding: 1rem 0;
+            }
+            @media (min-width: 800px) {
+                p {
+                    max-width: 60%;
+                }
+            }
+        </style>
+        <title>Hola Profe!!!</title>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
+            integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+    </head>
+    <body>
+        <div>
+            <h1><span id="saludo"></span>. Me llamo <span id="nombre"></span></h1>
+            <p>
+                Tome este ramo, ya que lo encuentro super importante, sobre todo para el diseño gráfico,ademas en mi experiencia que he trabajado con varias empresas mientras he estado estudiando, siempre requieren de una página web y de
+                programación en general, por lo que lo encuentro indispensable.
+            </p>
+            <p>
+                Vine a la segunda clase, porque como lo mencione anteriormente la considero de las clases mas importantes y por otro lado, con bastante dificultad, por lo que se me hace de suma importancia presentarme a estas clases, para
+                no quedar atrasado.😜
+            </p>
+        </div>
+        <script>
+            var opciones = ["Wena", "Holi", "Hola", "Buenas"];
+            function setup() {
+                createCanvas(windowWidth - 40, windowHeight - 40)
+                    .position(20, 20)
+                    .style("z-index", -1);
+                document.getElementById("nombre").textContent += "Nicolás Lagos";
+                document.getElementById("saludo").textContent += random(opciones);
+            }
+            function draw() {
+                background(127, 255, 212);
+                textSize(100);
+                text("👾", mouseX, mouseY);
+                ellipse(mouseX + 70, mouseY + 50, 100, 10);
+                fill(1);
+            }
+            function windowResized() {
+                resizeCanvas(windowWidth - 40, windowHeight - 40);
+            }
+        </script>
+    </body>
+</html>
